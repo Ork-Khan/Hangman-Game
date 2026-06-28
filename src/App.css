@@ -1,0 +1,165 @@
+.heart-container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    color: #696868;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header > h1{
+    color: rgb(211, 203, 203);
+}
+header > p{
+    color: #696868;
+}
+
+/* HTML: <div class="heart"></div> */
+.heart {
+  display: inline-block;
+  height: 15px; /* adjust to control the size */
+  aspect-ratio: 1;
+  clip-path: shape(from 50% 91%,line to 90% 50%,arc to 50% 9%  of 1%,arc to 10% 50% of 1%);
+  /* background: #cc333f; */
+}
+/* fallback until better support for shape() */
+@supports not (clip-path: shape(from 0 0,line to 0 0)) { 
+  .heart {
+    mask:
+     radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+     radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+     conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+  }
+}
+
+.full-heart{
+    background-color: red;
+}
+
+.empty-heart{
+    background-color: gray;
+}
+
+.keyboard{
+    margin: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.letter{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    border-radius: 5px;
+    background-color: #f2bb45;
+    color: #2c2b2a;
+}
+
+.game-end-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-end{
+    text-align: center;
+    color: white;
+    width: 150px;
+    border-radius: 5px;
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.win{
+    background-color: #639e64;
+}
+
+.lose{
+    background-color:#9d4939 ;
+}
+
+.revealed-word{
+    display: flex;
+    gap:5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.correct-letter{
+    background-color: #4da360;
+}
+
+.wrong-letter{
+    background-color: #aa3e32;
+}
+
+.revealed-letter{
+    border-bottom: solid 3px #8f8d82;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    /* border-radius: 5px; */
+    background-color: #383838;
+    color: white;
+}
+
+.new-game{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    background-color: #69acdc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    min-width: 250px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 50vw;
+    height: 10%;
+    padding: 10px;
+    /* flex-direction: column; */
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    background-color: #69acdc;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
